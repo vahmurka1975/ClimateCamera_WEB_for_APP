@@ -1,0 +1,59 @@
+{
+  "product": "ClimateCamera WEB for APP",
+  "version": "1.4.0",
+  "repository": "https://github.com/vahmurka1975/ClimateCamera_WEB_for_APP",
+  "target": "esp32dev",
+  "status": "candidate; build succeeded; hardware untested",
+  "partitions": {
+    "nvs": {
+      "offset": 36864,
+      "size": 20480,
+      "type": 1,
+      "subtype": 2
+    },
+    "otadata": {
+      "offset": 57344,
+      "size": 8192,
+      "type": 1,
+      "subtype": 0
+    },
+    "app0": {
+      "offset": 65536,
+      "size": 1966080,
+      "type": 0,
+      "subtype": 16
+    },
+    "app1": {
+      "offset": 2031616,
+      "size": 1966080,
+      "type": 0,
+      "subtype": 17
+    },
+    "cc_store": {
+      "offset": 3997696,
+      "size": 196608,
+      "type": 1,
+      "subtype": 64
+    }
+  },
+  "checksums": {
+    "boot_app0.bin": {
+      "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0",
+      "bytes": 8192
+    },
+    "bootloader.bin": {
+      "sha256": "0f65515a7e0dfe9cc4bc78c01bef79c941af1b2deb34d01ddd500ee3d465eedf",
+      "bytes": 17536
+    },
+    "firmware.bin": {
+      "sha256": "1371207a062ad707bb8ed900c02312e7d30a99aa3e66f9309c5f7baab39ca5c7",
+      "bytes": 1368544
+    },
+    "partitions.bin": {
+      "sha256": "e5d178606a46bc11619dd109daeda4fa4678face9609956016ea089e302f396e",
+      "bytes": 3072
+    }
+  },
+  "javascript_syntax": [],
+  "first_install": "USB with separate components; do not use ordinary OTA for partition migration"
+}
