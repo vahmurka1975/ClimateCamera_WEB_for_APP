@@ -1,18 +1,18 @@
 {
   "product": "ClimateCamera WEB for APP",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "repository": "https://github.com/vahmurka1975/ClimateCamera_WEB_for_APP",
   "target": "esp32dev",
   "status": "candidate; build succeeded; hardware untested",
   "ram_bytes": {
-    "used": 85036,
+    "used": 85060,
     "total": 327680,
     "percent": 26.0
   },
   "flash_bytes": {
-    "used": 1362413,
+    "used": 1368977,
     "total": 1966080,
-    "percent": 69.3
+    "percent": 69.6
   },
   "partitions": {
     "nvs": {
@@ -56,18 +56,18 @@
       "bytes": 17536
     },
     "firmware.bin": {
-      "sha256": "012ba3876ecb4c16a1c9a2535f65fa2c963bb2ebba9445a6f41bec6b55b6e9aa",
-      "bytes": 1368704
+      "sha256": "6d96f37e2751874697bdf41c9e16753020160c69c1fe6c63f8b92f2e2b3123c5",
+      "bytes": 1375280
     },
     "partitions.bin": {
       "sha256": "e5d178606a46bc11619dd109daeda4fa4678face9609956016ea089e302f396e",
       "bytes": 3072
     }
   },
-  "changes_v1_4_2": [
-    "Product API NVS flash-write check & RAM rollback in handleProductWeigh() and handleProductRemove() (HTTP 507 Flash write failed on NVS error)",
-    "Unified HTTP 507 error message in handleProductAdd() ('Flash write failed')",
-    "Version bump to 1.4.2 across sketch directory ClimateCamera_1_4_2_IDE1819, FirmwareVersion.h, WebUI.h, AdminUI.h, AdminOperations.inc, ClimateCamera.cpp, User_Setup.h, platformio.ini, and documentation"
+  "changes_v1_4_4": [
+    "Detailed field-by-field validation in deviceValidationError() (DeviceSettings.inc) with clear Russian error messages for SSID, Wi-Fi password, admin/viewer credentials, AP settings, and static IPv4 parameters",
+    "Improved /api/admin/device handler (handleDeviceSave in AdminOperations.inc): automatic whitespace trimming on text/IP fields, support for 1/0/true/false/on/off boolean flags, optional viewer account, and preservation of existing passwords when password fields are left blank",
+    "Version bump to 1.4.4 across ClimateCamera_1_4_4_IDE1819, FirmwareVersion.h, WebUI.h, AdminUI.h, AdminOperations.inc, ClimateCamera.cpp, User_Setup.h, platformio.ini, and release artifacts"
   ],
   "first_install": "USB with separate components if migrating from pre-1.4.0 partition layout; OTA supported from v1.4.0 with partitions_140.csv"
 }

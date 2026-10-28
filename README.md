@@ -1,6 +1,6 @@
-# ClimateCamera WEB for APP · 1.4.3
+# ClimateCamera WEB for APP · 1.4.4
 
-# ClimateCamera WEB for APP 1.4.3 — candidate build
+# ClimateCamera WEB for APP 1.4.4 — candidate build
 
 Source base: https://github.com/vahmurka1975/ClimateCamera_WEB_for_APP (local downloaded main snapshot). Only the HTU21D/GY21 branch is used. No changes are pushed to GitHub.
 
@@ -16,7 +16,7 @@ HTTP Basic Auth is not encrypted: trusted LAN or VPN only. Default AP: ClimateCa
 
 Build target: esp32dev, espressif32 6.6.0 / Arduino-ESP32 2.0.14, TFT_eSPI 2.5.43. Hardware Wi-Fi/AP, power-loss recovery, relay safety and restore round trips require bench tests; compilation alone does not validate hardware behavior. See build/test reports in build/.
 
-Installation: INSTALL_v1.4.3_RU.md
+Installation: INSTALL_v1.4.4_RU.md
 
-### Изменения в v1.4.3
+### Изменения в v1.4.4
 - В обработчиках `handleProductWeigh()` и `handleProductRemove()` (`NetworkServer.cpp`) добавлена проверка результата записи во флеш-раздел `cc_store` (`saveProductSlotNvs(idx)`): при ошибке записи состояние слота в ОЗУ откатывается к предыдущему и клиенту возвращается HTTP `507 Flash write failed` (аналогично `handleProductAdd()`).
