@@ -1,0 +1,47 @@
+esptool v5.6.0
+Image size: 1372624 bytes
+
+ESP32 Image Header
+==================
+Image version: 1
+Entry point: 0x4008332c
+Segments: 5
+Flash size: 4MB
+Flash freq: 40m
+Flash mode: DIO
+
+ESP32 Extended Image Header
+===========================
+WP pin: 0xee (disabled)
+Flash pins drive settings: clk_drv: 0x0, q_drv: 0x0, d_drv: 0x0, cs0_drv: 0x0, hd_drv: 0x0, wp_drv: 0x0
+Chip ID: 0 (ESP32)
+Minimal chip revision: v0.0, (legacy min_rev = 0)
+Maximal chip revision: v655.35
+
+Segments Information
+====================
+Segment   Length   Load addr   File offs  Memory types
+-------  -------  ----------  ----------  ------------
+      0  0x82eb8  0x3f400020  0x00000018  DROM
+      1  0x05ecc  0x3ffbdb60  0x00082ed8  BYTE_ACCESSIBLE, DRAM
+      2  0x07264  0x40080000  0x00088dac  IRAM
+      3  0xb200c  0x400d0020  0x00090018  IROM
+      4  0x0d170  0x40087264  0x0014202c  IRAM
+
+ESP32 Image Footer
+==================
+Checksum: 0x39 (valid)
+Validation hash: bdc27e8b29e721d7bc2eb974f6f84d80ffdb9317cb1905e69221e838ce1522bc (valid)
+
+Application Information
+=======================
+Project name: arduino-lib-builder
+App version: esp-idf: v4.4.6 3572900934
+Compile time: Oct  4 2023 16:50:20
+ELF file SHA256: 888f27eee4742dc5870356c56937157d32a3c4406691dc63c6d142f70690c89c
+ESP-IDF: v4.4.6-dirty
+Minimal eFuse block revision: 0.0
+Maximal eFuse block revision: 0.0
+Secure version: 0
+
+WARNING: Deprecated: Command 'image_info' is deprecated. Use 'image-info' instead.

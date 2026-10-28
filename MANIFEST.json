@@ -1,6 +1,6 @@
 {
   "product": "ClimateCamera WEB for APP",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "repository": "https://github.com/vahmurka1975/ClimateCamera_WEB_for_APP",
   "target": "esp32dev",
   "status": "candidate; build succeeded; hardware untested",
