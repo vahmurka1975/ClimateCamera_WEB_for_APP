@@ -1,16 +1,20 @@
-# Проверка комплекта v1.4.4
+# Проверка комплекта v1.4.5
 
-Сборка PlatformIO (`esp32dev`): **SUCCESS** (`build_v144_final.log`).
+Сборка PlatformIO (`esp32dev`): **SUCCESS** (`build_v145_final.log`).
 - **RAM:** 85 060 / 327 680 байт (26,0%)
-- **Flash:** 1 368 977 / 1 966 080 байт (69,6%)
-- **Размер `firmware.bin`:** 1375280 байт (`SHA-256: 6d96f37e2751874697bdf41c9e16753020160c69c1fe6c63f8b92f2e2b3123c5`)
+- **Flash:** 1 368 981 / 1 966 080 байт (69,6%)
+- **Размер `firmware.bin`:** 1375280 байт (`SHA-256: 2ada641ea7161254d738bc8f3b764a3c2e747875721794b31a87068b7c87940c`)
 
-Проверка `esptool.py image_info` (`image_info_v144.log`): контрольная сумма (`Checksum: a3 (valid)`) и `Validation Hash` (`86d3b0a3fc1c6c87adbcca7b82bbd088639c978afc074322fc36ede2a6609d70 (valid)`) корректны. Образ приложения помещается в раздел `app0` (`1 966 080` байт). Личный `Secrets.h` исключён из архива (оставлен шаблон `Secrets.example.h`).
+Проверка `esptool.py image_info` (`image_info_v145.log`): контрольная сумма (`Checksum: a4 (valid)`) и `Validation Hash` (`d6977074ed50bf1b1745a52b3f1a013263d4745d8d64512f117bdcad849ae9ea (valid)`), 5 сегментов, точка входа `0x4008332c`.
 
-## Ключевые изменения v1.4.4
-1. **Детальная диагностика сохранения настроек сети и учётных записей (`DeviceSettings.inc` — `deviceValidationError`)**: вместо обезличенной ошибки `Invalid fields...` возвращается точное описание причины на русском языке (какое именно поле не прошло проверку: SSID, пароль Wi-Fi, логин/пароль администратора или наблюдателя, параметры резервной точки доступа или конфликт IP/шлюза/маски при статическом IPv4).
-2. **Улучшенная обработка формы `/api/admin/device` (`AdminOperations.inc` — `handleDeviceSave`)**:
-   - Автоматическая обрезка случайных пробелов по краям (`trim()`) для `ssid`, логинов, `apSsid` и IPv4-адресов (`ip`, `gateway`, `subnet`, `dns`), часто добавляемых автозаполнением на смартфонах.
-   - Поддержка всех форматов булевых флагов (`1`/`0`, `true`/`false`, `on`/`off`) для `staticIp`, `apFallback` и `clearWifiPass`.
-   - Сохранение прежних значений при пустых полях паролей и учётных записей (`keepEmpty = true`), поддержка необязательной учётной записи наблюдателя (`viewerUser`).
-3. **Повышение версии прошивки до `1.4.4`** (каталог `ClimateCamera_1_4_4_IDE1819`, `FirmwareVersion.h`, `WebUI.h`, `AdminUI.h`, `AdminOperations.inc`, `ClimateCamera.cpp`, `User_Setup.h`, `platformio.ini`, `MANIFEST.json`, `INSTALL_v1.4.4_RU.md`, `RELEASE_NOTES_v1.4.4.md`).
+Таблица разделов `partitions_140.csv`:
+- `nvs`: `0x9000`, `0x5000` (20 КБ)
+- `otadata`: `0xe000`, `0x2000` (8 КБ)
+- `app0`: `0x10000`, `0x1e0000` (1920 КБ)
+- `app1`: `0x1f0000`, `0x1e0000` (1920 КБ)
+- `cc_store`: `0x3d0000`, `0x30000` (192 КБ)
+
+Ключевые изменения в v1.4.5:
+1. Исправлена ошибка ложного срабатывания проверки нулевого байта в `handleDeviceSave()` (`AdminOperations.inc`): вместо `value.indexOf('\0') >= 0` используется `memchr(value.c_str(), '\0', value.length()) != nullptr`.
+2. Сохранена подробная русскоязычная валидация сетевых параметров и учётных записей в `deviceValidationError()` (`DeviceSettings.inc`).
+3. Сквозное обновление версии до `1.4.5` (`ClimateCamera_1_4_5_IDE1819`).

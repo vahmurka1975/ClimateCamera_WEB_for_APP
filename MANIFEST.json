@@ -1,6 +1,6 @@
 {
   "product": "ClimateCamera WEB for APP",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "repository": "https://github.com/vahmurka1975/ClimateCamera_WEB_for_APP",
   "target": "esp32dev",
   "status": "candidate; build succeeded; hardware untested",
@@ -10,7 +10,7 @@
     "percent": 26.0
   },
   "flash_bytes": {
-    "used": 1368977,
+    "used": 1368981,
     "total": 1966080,
     "percent": 69.6
   },
@@ -56,7 +56,7 @@
       "bytes": 17536
     },
     "firmware.bin": {
-      "sha256": "6d96f37e2751874697bdf41c9e16753020160c69c1fe6c63f8b92f2e2b3123c5",
+      "sha256": "2ada641ea7161254d738bc8f3b764a3c2e747875721794b31a87068b7c87940c",
       "bytes": 1375280
     },
     "partitions.bin": {
@@ -64,10 +64,10 @@
       "bytes": 3072
     }
   },
-  "changes_v1_4_4": [
-    "Detailed field-by-field validation in deviceValidationError() (DeviceSettings.inc) with clear Russian error messages for SSID, Wi-Fi password, admin/viewer credentials, AP settings, and static IPv4 parameters",
-    "Improved /api/admin/device handler (handleDeviceSave in AdminOperations.inc): automatic whitespace trimming on text/IP fields, support for 1/0/true/false/on/off boolean flags, optional viewer account, and preservation of existing passwords when password fields are left blank",
-    "Version bump to 1.4.4 across ClimateCamera_1_4_4_IDE1819, FirmwareVersion.h, WebUI.h, AdminUI.h, AdminOperations.inc, ClimateCamera.cpp, User_Setup.h, platformio.ini, and release artifacts"
+  "changes_v1_4_5": [
+    "Fixed null-byte check in handleDeviceSave() (AdminOperations.inc): replaced Arduino String::indexOf('\\0')>=0 (which always matched the terminating null byte at value.length() and rejected every field starting with ssid) with memchr(value.c_str(), '\\0', value.length()) != nullptr",
+    "Retained detailed Russian field-by-field validation in deviceValidationError() (DeviceSettings.inc), whitespace trimming, flexible boolean flags, and optional viewer credentials",
+    "Version bump to 1.4.5 across ClimateCamera_1_4_5_IDE1819, FirmwareVersion.h, WebUI.h, AdminUI.h, AdminOperations.inc, ClimateCamera.cpp, platformio.ini, and release artifacts"
   ],
   "first_install": "USB with separate components if migrating from pre-1.4.0 partition layout; OTA supported from v1.4.0 with partitions_140.csv"
 }

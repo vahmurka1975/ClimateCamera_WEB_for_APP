@@ -1,0 +1,12 @@
+esptool.py v4.5.1
+Image version: 1
+Entry point: 4008332c
+5 segments
+
+Segment 1: len 0x837e4 load 0x3f400020 file_offs 0x00000018 [DROM]
+Segment 2: len 0x05ecc load 0x3ffbdb60 file_offs 0x00083804 [BYTE_ACCESSIBLE,DRAM]
+Segment 3: len 0x06938 load 0x40080000 file_offs 0x000896d8 [IRAM]
+Segment 4: len 0xb2140 load 0x400d0020 file_offs 0x00090018 [IROM]
+Segment 5: len 0x0da9c load 0x40086938 file_offs 0x00142160 [IRAM]
+Checksum: a4 (valid)
+Validation Hash: d6977074ed50bf1b1745a52b3f1a013263d4745d8d64512f117bdcad849ae9ea (valid)
